@@ -1,0 +1,20 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+<div class="container my-5 text-center py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 shadow p-5 bg-white rounded">
+            <div class="mb-4">
+                <span class="display-1 text-success">✓</span>
+            </div>
+            <h1 class="text-success fw-bold mb-3">¡Mensaje Recibido!</h1>
+            <p class="fs-5 text-muted mb-4">
+                Gracias por contactarte con OnlyFlans, te responderemos en breve.
+            </p>
+            <a href="{% url 'index' %}" class="btn btn-warning text-white fw-bold px-4 py-2 shadow-sm">
+                Volver al Inicio
+            </a >
+        </div>
+    </div>
+</div>
+{% endblock %}

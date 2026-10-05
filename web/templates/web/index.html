@@ -1,0 +1,24 @@
+{% extends 'web/base.html' %}
+{% block content %}
+<h2 class="mb-4 text-center fw-bold" style="color: #4a148c;">🍮 Nuestro Catálogo Tradicional</h2>
+<p class="text-center text-muted mb-5">Disfruta de nuestras preparaciones artesanales disponibles para todo público.</p>
+
+<div class="row">
+    {% for flan in flanes %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+            <img src="{{ flan.image_url }}" class="card-img-top" alt="{{ flan.name }}" style="height: 220px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-bold" style="color: #4a148c;">{{ flan.name }}</h5>
+                <p class="card-text text-muted flex-grow-1">{{ flan.description }}</p>
+                <span class="badge bg-success fs-6 float-end">${{ flan.price }}</span>
+                <a href="#" class="btn mt-3 text-white fw-bold shadow-sm" style="background-color: #4a148c;">Encargar</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12 text-center text-muted">No hay flanes públicos disponibles en este momento.</div>
+    {% endfor %}
+</div>
+{% endblock %}
+

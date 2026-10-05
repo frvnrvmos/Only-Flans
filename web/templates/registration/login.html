@@ -1,0 +1,41 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5 shadow p-4 bg-white rounded">
+            <h2 class="text-center mb-4 fw-bold text-dark">Iniciar Sesión</h2>
+            
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger p-2 small">
+                        {{ form.non_field_errors.0 }}
+                    </div>
+                {% endif %}
+                
+                <div class="mb-3">
+                    <label for="id_username" class="form-label fw-bold">Nombre de Usuario</label>
+                    <input type="text" name="username" id="id_username" class="form-control" placeholder="Tu usuario admin o cliente">
+                    {% if form.username.errors %}
+                        <div class="text-danger small mt-1">{{ form.username.errors.0 }}</div>
+                    {% endif %}
+                </div>
+                
+                <div class="mb-3">
+                    <label for="id_password" class="form-label fw-bold">Contraseña</label>
+                    <input type="password" name="password" id="id_password" class="form-control" placeholder="••••••••">
+                    {% if form.password.errors %}
+                        <div class="text-danger small mt-1">{{ form.password.errors.0 }}</div>
+                    {% endif %}
+                </div>
+                
+                <button type="submit" class="btn btn-warning w-100 fw-bold text-white py-2 mt-2 shadow-sm">
+                    Ingresar a OnlyFlans
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

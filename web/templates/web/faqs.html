@@ -1,0 +1,39 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 shadow p-4 bg-white rounded">
+            <h2 class="text-center mb-4 fw-bold text-dark">Preguntas Frecuentes 🍮</h2>
+            
+            <div class="accordion accordion-flush" id="accordionFaqs">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">
+                            ¿Hacen despachos a domicilio?
+                        </button>
+                    </h2>
+                    <div id="faqOne" class="accordion-collapse collapse" data-bs-parent="#accordionFaqs">
+                        <div class="accordion-body text-muted">
+                            Sí, realizamos despachos de martes a domingo en toda la región metropolitana. Los pedidos deben hacerse con 24 horas de anticipación.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">
+                            ¿Tienen opciones sin azúcar o para alérgenos?
+                        </button>
+                    </h2>
+                    <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFaqs">
+                        <div class="accordion-body text-muted">
+                            ¡Por supuesto! Contamos con una línea exclusiva de flanes endulzados con Alulosa y opciones libres de lactosa. Al hacer tu pedido indícanos tus requerimientos para tomarlos en cuenta.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
